@@ -13,10 +13,16 @@ const Alerts = () => {
 
   const fetchAlerts = async () => {
     try {
-      const response =
-        await API.get("/alerts");
+      const token = localStorage.getItem("token");
 
-      setAlerts(response.data);
+const response =
+  await API.get("/alerts", {
+    headers: {
+      Authorization: localStorage.getItem("token"),
+    },
+  });
+
+setAlerts(response.data);
     } catch (error) {
       console.log(error);
     }

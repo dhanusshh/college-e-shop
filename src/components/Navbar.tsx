@@ -30,8 +30,14 @@ const Navbar = () => {
 
   const loadAlerts = async () => {
     try {
-      const response =
-        await API.get("/alerts");
+      const token = localStorage.getItem("token");
+
+const response =
+  await API.get("/alerts", {
+    headers: {
+      Authorization: token,
+    },
+  });
 
       const unreadAlerts =
         response.data.filter(

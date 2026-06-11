@@ -28,30 +28,42 @@ const Account = () => {
   }, []);
 
   const loadProfile = async () => {
-    try {
-      const response =
-        await API.get(
-          "/users/profile"
-        );
+  try {
+    
 
-      setProfile(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+    const response = await API.get(
+      "/users/profile",
+      {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      }
+    );
 
-  const loadStats = async () => {
-    try {
-      const response =
-        await API.get(
-          "/dashboard/stats"
-        );
+    setProfile(response.data);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
-      setStats(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+ const loadStats = async () => {
+  try {
+    
+
+    const response = await API.get(
+      "/dashboard/stats",
+      {
+        headers: {
+          Authorization: localStorage.getItem("token"),
+        },
+      }
+    );
+
+    setStats(response.data);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
   return (
     <>
