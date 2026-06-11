@@ -15,7 +15,7 @@ const ProductCard = ({
     <div className="card shadow h-100 product-card">
 
       <img
-        src={`http://localhost:5000/uploads/${product.image}`}
+        src={`http://college-e-shop-backend-1.onrender.com/${product.image}`}
         className="card-img-top"
         alt={product.title}
         style={{

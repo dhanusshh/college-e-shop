@@ -84,7 +84,7 @@ const Sell = () => {
       );
 
       await axios.post(
-        "http://localhost:5000/api/products",
+        "https://college-e-shop-backend-1.onrender.com/api/products",
         formData,
         {
           headers: {
