@@ -33,11 +33,6 @@ const Account = () => {
 
     const response = await API.get(
   "/users/profile",
-  {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  }
 );
 
     setProfile(response.data);
@@ -52,11 +47,6 @@ const Account = () => {
 
    const response = await API.get(
   "/dashboard/stats",
-  {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem("token")}`,
-    },
-  }
 );
 
     setStats(response.data);
