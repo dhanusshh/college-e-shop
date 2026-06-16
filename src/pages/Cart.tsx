@@ -75,7 +75,7 @@ const Cart = () => {
                     <div className="col-md-3">
 
                       <img
-                        src={`http://college-e-shop-backend-1.onrender.com/${item.image}`}
+                        src={`https://college-e-shop-backend-1.onrender.com/${item.image}`}
                         alt={item.title}
                         className="img-fluid rounded-start"
                         style={{
