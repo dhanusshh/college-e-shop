@@ -27,7 +27,7 @@ const Login = () => {
 
       const response =
         await API.post(
-          "/auth/login",
+          "/auth/login-test",
           {
             email,
             password,

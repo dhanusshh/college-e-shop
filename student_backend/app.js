@@ -66,7 +66,11 @@ app.use(
   require("./routes/dashboard")
 );
 connectDB();
-
+app.get("/test", (req, res) => {
+  res.json({
+    message: "Backend Working",
+  });
+});
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
