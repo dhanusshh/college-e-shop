@@ -7,7 +7,7 @@ import API from "../api/axios";
 const Store = () => {
   const [products, setProducts] =
     useState<any[]>([]);
-
+console.log("PRODUCTS:", products);
   const [searchTerm, setSearchTerm] =
     useState("");
 
