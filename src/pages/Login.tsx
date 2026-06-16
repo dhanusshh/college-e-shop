@@ -27,13 +27,15 @@ const Login = () => {
 
       const response =
         await API.post(
-          "/auth/login-test",
+          "/auth/login",
           {
             email,
             password,
           }
         );
-
+        console.log("FULL RESPONSE", response.data);
+console.log("TOKEN", response.data.token);
+console.log("USER", response.data.user);
       localStorage.setItem(
         "token",
         response.data.token
