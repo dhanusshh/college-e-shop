@@ -13,13 +13,9 @@ const Alerts = () => {
 
   const fetchAlerts = async () => {
     try {
-      const token = localStorage.getItem("token");
 
 const response =
   await API.get("/alerts", {
-    headers: {
-      Authorization: localStorage.getItem("token"),
-    },
   });
 
 setAlerts(response.data);
