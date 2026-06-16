@@ -28,30 +28,23 @@ const Navbar = () => {
     loadAlerts();
   }, []);
 
-  const loadAlerts = async () => {
-    try {
-      const token = localStorage.getItem("token");
+ const loadAlerts = async () => {
+  try {
+    const response =
+      await API.get("/alerts");
 
-const response =
-  await API.get("/alerts", {
-    headers: {
-      Authorization: token,
-    },
-  });
-
-      const unreadAlerts =
-        response.data.filter(
-          (alert: any) =>
-            !alert.isRead
-        );
-
-      setAlertCount(
-        unreadAlerts.length
+    const unreadAlerts =
+      response.data.filter(
+        (alert: any) => !alert.isRead
       );
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
+    setAlertCount(
+      unreadAlerts.length
+    );
+  } catch (error) {
+    console.log(error);
+  }
+};
 
   const handleLogout = () => {
     localStorage.removeItem(

@@ -32,13 +32,13 @@ const Account = () => {
     
 
     const response = await API.get(
-      "/users/profile",
-      {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      }
-    );
+  "/users/profile",
+  {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  }
+);
 
     setProfile(response.data);
   } catch (error) {
@@ -50,14 +50,14 @@ const Account = () => {
   try {
     
 
-    const response = await API.get(
-      "/dashboard/stats",
-      {
-        headers: {
-          Authorization: localStorage.getItem("token"),
-        },
-      }
-    );
+   const response = await API.get(
+  "/dashboard/stats",
+  {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  }
+);
 
     setStats(response.data);
   } catch (error) {
